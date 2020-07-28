@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+
+<GridPane prefHeight="318.0" prefWidth="690.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.SetupPollTrackerController">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label text="Number of polls to track:" />
+      <Label text="Number of seats available in election:" GridPane.rowIndex="1" />
+      <Label text="Number of parties running in election:" GridPane.rowIndex="2" />
+      <TextField fx:id="pollsToTrack" GridPane.columnIndex="1" />
+      <TextField fx:id="seatsAvailable" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="partiesRunning" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button fx:id="myClear" mnemonicParsing="false" onAction="#clearThing" text="Clear" GridPane.rowIndex="3" />
+      <Button fx:id="mySubmit" mnemonicParsing="false" onAction="#submitThing" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+   </children>
+</GridPane>
