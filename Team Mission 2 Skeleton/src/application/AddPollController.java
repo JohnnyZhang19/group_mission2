@@ -87,6 +87,4 @@ public class AddPollController extends PollTrackerController{
 		selectPoll.setItems(FXCollections.observableArrayList(choiceBox));
 		
 	}
-	
-
 }
