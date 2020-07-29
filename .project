@@ -3,6 +3,7 @@
 	<name>group_mission2</name>
 	<comment></comment>
 	<projects>
+		<project>CPSC-233-Team-Mission-1</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

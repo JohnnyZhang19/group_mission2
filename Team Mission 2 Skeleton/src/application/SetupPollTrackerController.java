@@ -7,6 +7,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import model.PollList;
+import model.Factory;
+
 
 public class SetupPollTrackerController extends PollTrackerController {
 
@@ -38,7 +41,14 @@ public class SetupPollTrackerController extends PollTrackerController {
 
     @FXML
     void submitThing(ActionEvent event) {
-
+    	Integer inputSeat1 = Integer.valueOf(inputSeat.getText());
+    	Integer inputPoll1 = Integer.valueOf(inputPoll.getText());
+    	Integer inputParty1 = Integer.valueOf(inputParty.getText());
+    	PollList pl = new PollList(inputPoll1,inputSeat1);
+    	setPollList(pl);
+    	Factory f = new Factory(inputParty1);
+    	setFactory(f)
+    	;
     }
 
     @FXML
