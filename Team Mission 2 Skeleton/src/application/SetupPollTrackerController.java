@@ -2,8 +2,6 @@ package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import model.Factory;
-import model.PollList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,19 +17,19 @@ public class SetupPollTrackerController extends PollTrackerController {
     private URL location;
 
     @FXML
-    private TextField pollsToTrack;
+    private TextField inputSeat;
 
     @FXML
-    private TextField partiesRunning;
+    private TextField inputPoll;
 
     @FXML
     private Button myClear;
 
     @FXML
-    private Button mySubmit;
+    private TextField inputParty;
 
     @FXML
-    private TextField seatsAvailable;
+    private Button mySubmit;
 
     @FXML
     void clearThing(ActionEvent event) {
@@ -40,27 +38,23 @@ public class SetupPollTrackerController extends PollTrackerController {
 
     @FXML
     void submitThing(ActionEvent event) {
-    	Integer getPollsToTrack = Integer.valueOf(pollsToTrack.getText());
-    	Integer getSeatsAvailable = Integer.valueOf(seatsAvailable.getText());
-    	Integer getPartiesRunning = Integer.valueOf(partiesRunning.getText());
-    	
-    	
+
     }
 
     @FXML
     void initialize() {
-        assert pollsToTrack != null : "fx:id=\"pollsToTrack\" was not injected: check your FXML file 'SetupPollTrackerView.fxml'.";
-        assert partiesRunning != null : "fx:id=\"partiesRunning\" was not injected: check your FXML file 'SetupPollTrackerView.fxml'.";
+        assert inputSeat != null : "fx:id=\"inputSeat\" was not injected: check your FXML file 'SetupPollTrackerView.fxml'.";
+        assert inputPoll != null : "fx:id=\"inputPoll\" was not injected: check your FXML file 'SetupPollTrackerView.fxml'.";
         assert myClear != null : "fx:id=\"myClear\" was not injected: check your FXML file 'SetupPollTrackerView.fxml'.";
+        assert inputParty != null : "fx:id=\"inputParty\" was not injected: check your FXML file 'SetupPollTrackerView.fxml'.";
         assert mySubmit != null : "fx:id=\"mySubmit\" was not injected: check your FXML file 'SetupPollTrackerView.fxml'.";
-        assert seatsAvailable != null : "fx:id=\"seatsAvailable\" was not injected: check your FXML file 'SetupPollTrackerView.fxml'.";
 
     }
 
 	@Override
 	public void refresh() {
-		pollsToTrack.clear();
-		partiesRunning.clear();
-		seatsAvailable.clear();	
+		inputSeat.clear();
+		inputPoll.clear();
+		inputParty.clear();
 	}
 }
