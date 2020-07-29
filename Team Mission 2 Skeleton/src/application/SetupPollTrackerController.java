@@ -2,6 +2,8 @@ package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import model.Factory;
+import model.PollList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,12 +35,16 @@ public class SetupPollTrackerController extends PollTrackerController {
 
     @FXML
     void clearThing(ActionEvent event) {
-
+    	refresh();
     }
 
     @FXML
     void submitThing(ActionEvent event) {
-    	System.out.print("bam");
+    	Integer getPollsToTrack = Integer.valueOf(pollsToTrack.getText());
+    	Integer getSeatsAvailable = Integer.valueOf(seatsAvailable.getText());
+    	Integer getPartiesRunning = Integer.valueOf(partiesRunning.getText());
+    	
+    	
     }
 
     @FXML
@@ -53,6 +59,8 @@ public class SetupPollTrackerController extends PollTrackerController {
 
 	@Override
 	public void refresh() {
-		System.out.print("do");
+		pollsToTrack.clear();
+		partiesRunning.clear();
+		seatsAvailable.clear();	
 	}
 }
