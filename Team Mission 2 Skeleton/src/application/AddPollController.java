@@ -1,6 +1,4 @@
-
 package application;
-
 
 
 import javafx.collections.FXCollections;
@@ -11,6 +9,14 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import model.Poll;
+
+/**
+ * This class is a controller which extends PollTrackerController
+ * and set the new poll name.
+ * @author Zonglin Zhang UCID: 30020965
+ *
+ */
 
 public class AddPollController extends PollTrackerController{
 
@@ -53,40 +59,38 @@ public class AddPollController extends PollTrackerController{
     	System.out.println("clear");
     	enterPollName.clear();
     }
-
-    @FXML
-    void selectPoll(ActionEvent event) {
-    	
-    }
-
-    @FXML
-    void selectLabel(ActionEvent event) {
-
-    }
-
-    @FXML
-    void pollNameLabel(ActionEvent event) {
-
-    }
-
+    
     @FXML
     void keyTyped(KeyEvent event) {
     	System.out.println("entered");
     	
     }
 
+    /**
+     * this method is to show the items in the choicebBox.
+     */
 	@Override
 	public void refresh() {
-		
+		selectPoll.setItems(FXCollections.observableArrayList(getPoll()));
 	}
 	/**
 	 * this method is to set the choiceBox
 	 */
-	@FXML
+	@FXML 
 	void initialize() {
-		String[] choiceBox = {"1(Replace poll Poll0)","2(Replace poll Poll1)","3(Replace poll Poll2)","4(Replace poll Poll3)"
-				,"5(Replace poll Poll4)"};
-		selectPoll.setItems(FXCollections.observableArrayList(choiceBox));
 		
 	}
+	/**
+	 * this method is to call the polls in the Poll class and place them in the choiceBox.
+	 * @return
+	 */
+	public String[] getPoll() {
+		String[] choiceBox = new String[getPollList().getPolls().length];
+		for(int i = 0; i < getPollList().getPolls().length; i ++) {
+			choiceBox[i] = (i+1) + "(Replace poll " + getPollList().getPolls()[i].getPollName() + ")";
+			
+		}
+		return choiceBox;
+	}
+	
 }
