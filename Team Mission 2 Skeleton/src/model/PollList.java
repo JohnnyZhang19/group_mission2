@@ -23,6 +23,9 @@ public class PollList {
 	public int getNumOfSeats() {
 		return numOfSeats;
 	}
+	public void setNumOfSeats(int numOfSeats) {
+		this.numOfSeats = numOfSeats;
+	}
 	
 	public Poll[] getPolls() {
 		return polls;
